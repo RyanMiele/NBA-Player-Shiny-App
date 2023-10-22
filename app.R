@@ -2,7 +2,6 @@ library(tidyverse)
 library(ggimage)
 library(gt)
 library(ggrepel)
-#library(jthomasmock/gtExtras)
 library(scales)
 library(ggthemes)
 library(ggplot2)
@@ -14,46 +13,25 @@ library(lubridate)
 library(vip)
 library(viridis)
 library(hrbrthemes)
-library(sportyR)
-library(mlbplotR)
 library(baseballr)
 library(ggplot2)
 library(dplyr)
 library(ggrepel)
 library(devtools)
-library(hockeyR)
 library(shiny)
-
 library(data.table)
-library(tidyverse) # all the things
-
-library(ggExtra)   # marginal plots
-
-library(ggtext)    # color your text
-
-library(patchwork) # combine multiple plots
-library(paletteer) # get all the color palettes
+library(ggExtra)  
+library(ggtext)    
+library(patchwork) 
+library(paletteer) 
 library(scales)
-
 library(hexbin)
-
 library(shinydashboard)
 library(shinyWidgets)
 library(reactable)
 library(reactablefmtr)
 library(shinythemes)
-
 library(reshape2)
-
-
-#install.packages("tidyverse")
-library(tidyverse)
-
-#install.packages("dplyr")
-library(dplyr)
-
-library(ggplot2)
-
 library(cowplot)
 library(rsconnect)
 
@@ -237,14 +215,10 @@ plot_court = function(court_theme = court_themes$light, use_short_three = FALSE)
 
 
 
-# ------------------------- Filter for Single Game Shots by Date & Player Name
-
 shots <- shots_data %>%
   filter(GAME_DATE == "04-04-2023") %>%
   filter(PLAYER_NAME == "Joel Embiid" )
 
-
-# ------------------------- Create Plot
 
 plot_court(court_themes$white, use_short_three = F) +
   # ---- plot shot "points" with x & y locations
@@ -475,7 +449,6 @@ server <-  function(input, output) {
       mutate(head_x = 0,
              head_y = 0)%>%
       filter(PLAYER_NAME == input$playerchoose1 )
-    #filter(PLAYER_NAME == "Joel Embiid")
     
     
     ggplot()+
@@ -1601,7 +1574,7 @@ shinyApp(ui = ui, server = server)
 
 
 
-# 
+# This is all backup code so just ignore
 # 
 # 
 # compiled_shots <- shots_data%>%
